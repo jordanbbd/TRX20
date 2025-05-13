@@ -1,0 +1,172 @@
+/* ✅ 設定背景 */
+body {
+    background: linear-gradient(to bottom, #005f5f, #008080);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ✅ 右上角 & 左下角圖片 */
+.top-right-shapes {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.bottom-left-shapes {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* ✅ 外框（讓 Logo 和 登入框一起置中） */
+.content-wrapper {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+/* ✅ Logo */
+.logo {
+    width: 220px;
+    margin-bottom: 30px;
+}
+
+/* ✅ 登入框（不固定高度，讓頁面滾動） */
+.login-container {
+    background: #161718;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    min-width: 40px;
+    max-width: 90%;
+    word-wrap: break-word;
+
+}
+
+/* ✅ 錢包地址 */
+.wallet-address {
+    background: #1e1e1e;
+    color: #C0A45A;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* ✅ 標題 */
+.section-title {
+    font-size: 18px;
+    color: #C0A45A;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    padding-left: 10px;
+    border-left: 4px solid #C0A45A;
+}
+
+/* ✅ 輸入框 */
+.input-field {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    display: block;
+}
+
+/* ✅ 付款方式 & 法律聲明 */
+.info-text {
+    font-size: 14px;
+    color: #ddd;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+/* ✅ 按鈕 */
+.btn-submit {
+    width: 100%;
+    background-color: #008080;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 50px;
+    text-align: center;
+    display: block;
+}
+
+.btn-submit:hover {
+    background-color: #006666;
+}
+
+/* ✅ 版權資訊 */
+.footer {
+    font-size: 14px;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ✅ 手機版適配 */
+@media (max-width: 768px) {
+	.logo {
+		width: 180px; /* ✅ 縮小 LOGO */
+		margin-bottom: 20px;
+	}
+
+	.login-container {
+		width: 80%; /* ✅ 讓登入框自適應手機螢幕 */
+		padding: 20px; /* ✅ 減少 padding，避免內容擠壓 */
+	}
+
+	.wallet-address {
+		font-size: 12px; /* ✅ 減小字體，避免過長換行 */
+		padding: 8px;
+	}
+
+	.input-field {
+		width: calc(100% - 20px);
+		font-size: 14px; /* ✅ 讓字體適應手機 */
+	}
+
+	.btn-submit {
+		font-size: 14px; /* ✅ 讓按鈕文字適應 */
+		padding: 10px 0;
+	}
+
+	.footer {
+		font-size: 12px; /* ✅ 讓版權資訊適應手機 */
+		padding: 10px 0;
+	}
+
+	/* ✅ 縮小背景圖片並調整位置 */
+	.top-right-shapes {
+		width: 100px;  /* ✅ 縮小 */
+		top: 10px;
+		right: 10px;
+	}
+
+	.top-right-shapes, .bottom-left-shapes {
+		display: none;
+	}
+}

